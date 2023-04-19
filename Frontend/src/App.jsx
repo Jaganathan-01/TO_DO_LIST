@@ -7,16 +7,17 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 toast.configure();
 
+
 const App = () => {
   const [list, setList] = useState([]);
   const [editState, setEditState] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/v1/list")
+    fetch("http://localhost:3000/api/todo")
       .then((res) => {
         res.json().then((json) => {
           console.log(json);
-          setList(json);
+          setList(json.data);
         });
       })
       .catch(() => {
@@ -42,7 +43,7 @@ const App = () => {
 
   const addItem = (item) => {
     item.id = nanoid();
-    fetch("http://localhost:3000/api/v1/list", {
+    fetch("http://localhost:3000/api/todo/create", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",

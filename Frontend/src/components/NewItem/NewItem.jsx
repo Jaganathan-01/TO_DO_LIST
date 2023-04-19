@@ -51,7 +51,7 @@ const NewItem = (props) => {
             <div className="checkbox" />
             <div className="form-container">
                 <input placeholder="Type here..." value={title} onChange={handleInputChange} />
-                {title && (
+                
                     <div>
                         <div className="badge-container">
                             {PRIORITY.map((p) => (
@@ -71,7 +71,7 @@ const NewItem = (props) => {
                             <button onClick={clearState}>Clear</button>
                         </div>
                     </div>
-                )}
+                
             </div>
         </div>
     );

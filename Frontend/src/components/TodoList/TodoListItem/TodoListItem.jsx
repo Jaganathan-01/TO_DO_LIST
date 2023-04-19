@@ -3,7 +3,7 @@ import "./TodoListItem.css";
 
 const TodoListItem = (props) => {
   const { item, onEdit, onDelete, index } = props;
-  const { title, priority, id } = item;
+  const { title, priority, _id } = item;
   const [isChecked, setChecked] = useState(false);
 
   return (
@@ -30,7 +30,7 @@ const TodoListItem = (props) => {
       </span>
       <span
         className="material-symbols-outlined pointer"
-        onClick={() => onDelete(id)}
+        onClick={() => onDelete(_id)}
       >
         delete
       </span>
